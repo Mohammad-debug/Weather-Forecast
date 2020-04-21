@@ -2,6 +2,7 @@ const express = require('express') //importing
 const path= require('path')
 
 const app = express() //loading app framework
+const port = process.env.PORT || 3000//loading environment variable for Heroku 
 const hbs=require('hbs')
 const geocode=require('./utils/geocode.js')
 const forecast=require('./utils/forecast.js')
@@ -96,8 +97,8 @@ app.get('*',(req,res)=>{//last if match not found
     })
 })
 
-app.listen(3000, () => {//staring the express server...
-        console.log("Hello ! server is up and running on port 3000")
+app.listen(port, () => {//staring the express server...
+        console.log("Hello ! server is up and running on port "+port)
     }) //local development port
 
 

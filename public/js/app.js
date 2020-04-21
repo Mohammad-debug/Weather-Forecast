@@ -10,20 +10,15 @@ weatherform.addEventListener('submit', (e) => {
     console.log(address)
     messageOne.textContent = "Loading........"
     messageTwo.textContent=""//for cleaning previous data
-    fetch('http://localhost:3000/weather?address=' + address).then((response) => {//tiime taking process
-       
+    fetch('/weather?address=' + address).then((response) => {//time taking process//lat (3) change for deployment
+
         response.json().then((data) => {
             messageOne.textContent=""
             if (data.error) {
                 //console.log(data.error)
                 messageTwo.textContent=data.error
             } else {
-                // var text="";
-                // Object.keys(data).forEach(element => {
-                //     text +="  > "+ element + " :--  "  + data[element] 
-                //      messageTwo.textContent=text;
-                // },
-                // );
+                
                 messageOne.textContent=data.location
                 messageTwo.textContent=data.forecast
             }
