@@ -23,7 +23,7 @@ hbs.registerPartials(partial_path)//here it will allow program to look into this
 
 app.get('',(req,res)=>{//2
     res.render('index',{
-        title:'Weather App',
+        title:'Weather',
         name:'Md Anas'
     })
 })
@@ -31,7 +31,7 @@ app.get('',(req,res)=>{//2
 app.get('/about',(req,res)=>{//3
     res.render('about',{
         title:"About Me",
-        name:"Anas"
+        name:"Md Anas"
     })
 })
 app.get('/help',(req,res)=>{

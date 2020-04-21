@@ -7,7 +7,7 @@ const forecast = (lat, long, callback) => {
             } else if ('error' in body) {
                 callback("Invalid input!", undefined)
             } else {
-                const data = body.current.weather_descriptions[0] + " It is currently " + body.current.temperature + " but its feels like " + body.current.feelslike + ". "
+                const data = "Weather is "+body.current.weather_descriptions[0] + " .It is currently " + body.current.temperature + " but its feels like " + body.current.feelslike + ". "
                 callback(undefined, data)
             }
         }) //request is also a fallback function on its own as I can see second argument is function
